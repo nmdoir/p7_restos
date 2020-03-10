@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from './logo.svg';
-import MapContainer from "./components/MapContainer";
 import './App.css';
 
 function App() {
