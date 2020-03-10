@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import Marker from "./Marker";
+import {Restos} from "./RestosData";
 
 class MapContainer extends Component {
     static defaultProps = {
@@ -24,24 +25,17 @@ class MapContainer extends Component {
                     defaultZoom={this.props.zoom}
                     yesIWantToUseGoogleMapApiInternals={true}
                 >
-                    <Marker
-                        lat={48.869292}
-                        lng={2.366272}
-                        name="IMA Cantine"
-                        color="#348680"
-                    />
-                    <Marker
-                        lat={48.8737815}
-                        lng={2.3501649}
-                        name="Bronco"
-                        color="#348680"
-                    />
-                    <Marker
-                        lat={48.870779}
-                        lng={2.360557}
-                        name="Les Résistants"
-                        color="#348680"
-                    />
+                    {
+                        Restos.map(marker =>
+                            <Marker
+                                lat={marker.lat}
+                                lng={marker.long}
+                                name={marker.name}
+                                color="#348680"
+                            />
+                        )
+                    }
+
                 </GoogleMapReact>
             </div>
         );
