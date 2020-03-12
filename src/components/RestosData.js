@@ -30,6 +30,22 @@ const Restos = [
                 "comment":"J'ai trouvé ça correct, sans plus"
             }
         ]
+    },
+    {
+        "name":"Street Bangkok",
+        "address":"3 Rue Eugène Varlin, 75010 Paris",
+        "lat":48.8737815,
+        "long":2.3501649,
+        "ratings":[
+            {
+                "stars":4,
+                "comment":"Un excellent restaurant, j'y reviendrai ! Par contre il vaut mieux aimer la viande."
+            },
+            {
+                "stars":5,
+                "comment":"Tout simplement mon restaurant préféré !"
+            }
+        ]
     }
 ];
 

@@ -12,13 +12,31 @@ class MapContainer extends Component {
         zoom: 15
     };
 
+    getGeoLocation = () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    console.log(position.coords);
+                    MapContainer.defaultProps = {
+                        center: {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        }
+                    };
+                }
+            );
+
+        } else {
+            alert("Votre localisation n'a pas été trouvée.")
+        }
+    };
 
     render() {
         return (
             <div style={{ height: '80vh', width: '60%' }}>
                 <GoogleMapReact
                     bootstrapURLKeys={{
-                        key: "AIzaSyCkx4KGVE_1aFU2deJoQXKDC3-oWy8U1U4",
+                        key: "AIzaSyCE6qR2VZH07JiSuIDmV65qImfCcgDXWrE",
                         libraries: ['places']
                     }}
                     defaultCenter={this.props.center}
@@ -35,7 +53,6 @@ class MapContainer extends Component {
                             />
                         )
                     }
-
                 </GoogleMapReact>
             </div>
         );
