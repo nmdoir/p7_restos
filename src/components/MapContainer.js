@@ -1,28 +1,35 @@
-import React, { Component } from 'react';
+import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import Marker from "./Marker";
 import {Restos} from "./RestosData";
+import './Marker.css';
 
-class MapContainer extends Component {
-    static defaultProps = {
+class MapContainer extends React.Component {
+    state = {
         center: {
             lat: 48.87,
             lng: 2.36
         },
-        zoom: 15
+        zoom: 14
     };
 
-    getGeoLocation = () => {
+    _onChange = ({center, zoom}) => {
+        this.setState({
+            center: center,
+            zoom: zoom,
+        });
+    };
+
+    componentDidMount() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
-                    console.log(position.coords);
-                    MapContainer.defaultProps = {
-                        center: {
+                    this.setState({
+                        center : {
                             lat: position.coords.latitude,
                             lng: position.coords.longitude
                         }
-                    };
+                    });
                 }
             );
 
@@ -39,10 +46,17 @@ class MapContainer extends Component {
                         key: "AIzaSyCE6qR2VZH07JiSuIDmV65qImfCcgDXWrE",
                         libraries: ['places']
                     }}
-                    defaultCenter={this.props.center}
-                    defaultZoom={this.props.zoom}
+                    onChange={this._onChange}
+                    center={this.state.center}
+                    zoom={this.state.zoom}
                     yesIWantToUseGoogleMapApiInternals={true}
                 >
+                    <div
+                        className="place pin bounce"
+                        style={{ backgroundColor: "red", cursor: 'pointer' }}
+                        lat={this.state.center.lat}
+                        lng={this.state.center.lng}
+                    />
                     {
                         Restos.map(marker =>
                             <Marker
