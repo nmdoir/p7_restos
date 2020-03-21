@@ -10,7 +10,11 @@ class MapContainer extends React.Component {
             lat: 48.87,
             lng: 2.36
         },
-        zoom: 15
+        zoom: 15,
+        userPos: {
+            lat: null,
+            lng: null
+        }
     };
 
     _onChange = ({center, zoom}) => {
@@ -26,6 +30,11 @@ class MapContainer extends React.Component {
                 (position) => {
                     this.setState({
                         center : {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        },
+                        className: "place pin bounce",
+                        userPos : {
                             lat: position.coords.latitude,
                             lng: position.coords.longitude
                         }
@@ -52,10 +61,10 @@ class MapContainer extends React.Component {
                     yesIWantToUseGoogleMapApiInternals={true}
                 >
                     <div
-                        className="place pin bounce"
+                        className={this.state.className}
                         style={{ backgroundColor: "red", cursor: 'pointer' }}
-                        lat={this.state.center.lat}
-                        lng={this.state.center.lng}
+                        lat={this.state.userPos.lat}
+                        lng={this.state.userPos.lng}
                     />
                     {
                         Restos.map(marker =>
