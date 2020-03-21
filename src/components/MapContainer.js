@@ -1,35 +1,81 @@
-import React, { Component } from 'react';
+ import React from 'react';
 import GoogleMapReact from 'google-map-react';
+import Marker from "./Marker";
+import {Restos} from "./RestosData";
+import './Marker.css';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
-class MapContainer extends Component {
-    static defaultProps = {
+class MapContainer extends React.Component {
+    state = {
         center: {
-            lat: 48.86,
-            lng: 2.35
+            lat: 48.87,
+            lng: 2.36
         },
-        zoom: 14
+        zoom: 15,
+        userPos: {
+            lat: null,
+            lng: null
+        }
+    };
+
+    _onChange = ({center, zoom}) => {
+        this.setState({
+            center: center,
+            zoom: zoom,
+        });
+    };
+
+    componentDidMount() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    this.setState({
+                        center : {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        },
+                        className: "place pin bounce",
+                        userPos : {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        }
+                    });
+                }
+            );
+
+        } else {
+            alert("Votre localisation n'a pas été trouvée.")
+        }
     };
 
     render() {
         return (
-            // Important! Always set the container height explicitly
             <div style={{ height: '80vh', width: '60%' }}>
                 <GoogleMapReact
                     bootstrapURLKeys={{
-                        key: "AIzaSyCkx4KGVE_1aFU2deJoQXKDC3-oWy8U1U4",
+                        key: "AIzaSyCE6qR2VZH07JiSuIDmV65qImfCcgDXWrE",
                         libraries: ['places']
                     }}
-                    defaultCenter={this.props.center}
-                    defaultZoom={this.props.zoom}
+                    onChange={this._onChange}
+                    center={this.state.center}
+                    zoom={this.state.zoom}
                     yesIWantToUseGoogleMapApiInternals={true}
                 >
-                    <AnyReactComponent
-                        lat={48.869292}
-                        lng={2.366272}
-                        text="IMA Cantine"
+                    <div
+                        className={this.state.className}
+                        style={{ backgroundColor: "red", cursor: 'pointer' }}
+                        lat={this.state.userPos.lat}
+                        lng={this.state.userPos.lng}
                     />
+                    {
+                        Restos.map(marker =>
+                            <Marker
+                                lat={marker.lat}
+                                lng={marker.long}
+                                name={marker.name}
+                                color="#348680"
+                            />
+                        )
+                    }
                 </GoogleMapReact>
             </div>
         );
