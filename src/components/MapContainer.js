@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import Marker from "./Marker";
 import {Restos} from "./RestosData";
@@ -10,7 +10,7 @@ class MapContainer extends React.Component {
             lat: 48.87,
             lng: 2.36
         },
-        zoom: 14
+        zoom: 15
     };
 
     _onChange = ({center, zoom}) => {
