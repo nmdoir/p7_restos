@@ -49,10 +49,10 @@ class MapContainer extends React.Component {
 
     render() {
         return (
-            <div style={{ height: '80vh', width: '60%' }}>
+            <div style={{ height: '80vh', width: '100%' }}>
                 <GoogleMapReact
                     bootstrapURLKeys={{
-                        key: "AIzaSyCE6qR2VZH07JiSuIDmV65qImfCcgDXWrE",
+                        key: "AIzaSyDqUz5uWh3Bc32cdHvUQ-JZo1r9TJilfIw",
                         libraries: ['places']
                     }}
                     onChange={this._onChange}

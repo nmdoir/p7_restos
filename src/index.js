@@ -5,6 +5,6 @@ import './index.css';
 import MapContainer from './components/MapContainer';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<MapContainer />, document.getElementById('root'));
+ReactDOM.render(<MapContainer />, document.getElementById('map'));
 
 serviceWorker.unregister();
