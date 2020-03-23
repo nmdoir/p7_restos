@@ -2,7 +2,7 @@
 import GoogleMapReact from 'google-map-react';
 import Marker from "./Marker";
 import {Restos} from "./RestosData";
-import './Marker.css';
+import './Components.css';
 
 class MapContainer extends React.Component {
     state = {
