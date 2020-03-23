@@ -9,7 +9,7 @@ function RestoList() {
 
     return (
 
-    <div style={{ height: '80vh', width: '100%' }}>
+    <div style={{ width: '100%' }}>
         <ul className={"listGroup"}>
         {
                 Restos.map(resto =>

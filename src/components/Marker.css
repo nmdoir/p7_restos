@@ -61,4 +61,13 @@
     }
 }
 
-.list
+.listGroup {
+    max-height: 80vh;
+    overflow-y: scroll;
+}
+
+.font-larger {
+    font-size: larger;
+    text-align: center;
+}
+

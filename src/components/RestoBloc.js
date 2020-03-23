@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Marker.css";
 
 const RestoBloc = (props: any) => {
     const {name, address, rating} = props;
@@ -7,9 +8,9 @@ const RestoBloc = (props: any) => {
             className={"list-group-item"}
             title={name}
         >
-            <h5>{name}</h5>
-            <p>{address}</p>
-            <p>{rating}</p>
+            <h4>{name}</h4>
+            <p className={"font-larger"}>{address}</p>
+            <p className={"font-larger"}>{rating}</p>
         </li>
     );
 };
