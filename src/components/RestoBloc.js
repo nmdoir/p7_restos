@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RestoBloc = (props: any) => {
-    const {name, address, ratings} = props;
+    const {name, address, rating} = props;
     return (
         <li
             className={"list-group-item"}
@@ -9,7 +9,7 @@ const RestoBloc = (props: any) => {
         >
             <h5>{name}</h5>
             <p>{address}</p>
-            <p>{ratings}</p>
+            <p>{rating}</p>
         </li>
     );
 };
