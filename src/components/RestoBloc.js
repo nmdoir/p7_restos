@@ -1,11 +1,12 @@
 import React from 'react';
 import "./Components.css";
+import {CommentsList} from "./CommentsList";
 
 const RestoBloc = (props: any) => {
     const {name, address, rating, stars, lat, lng} = props;
     return (
         <li
-            className={"list-group-item"}
+            className={"list-group-item commentsModal"}
             title={name}
         >
             <div className="container-fluid">
@@ -20,9 +21,18 @@ const RestoBloc = (props: any) => {
                             />
                         </div>
                         <span className={"font-larger bold"}> {rating}</span>
+                        <span className={"float-right"}>
+                        <button type="button" className="btn btn-light" data-toggle="modal" data-target="#commentsModal" title={name}>
+                            Commentaires
+                        </button>
+                        </span>
                     </div>
+
                     <div className="col-3">
-                        <img src={"https://maps.googleapis.com/maps/api/streetview?size=110x110&location=" + lat + "," + lng + "&key=AIzaSyDqUz5uWh3Bc32cdHvUQ-JZo1r9TJilfIw" } />
+                        <img
+                            src={"https://maps.googleapis.com/maps/api/streetview?size=110x110&location=" + lat + "," + lng + "&key=AIzaSyDqUz5uWh3Bc32cdHvUQ-JZo1r9TJilfIw" }
+                            alt={"Streetview"}
+                        />
                     </div>
                 </div>
             </div>
