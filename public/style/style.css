@@ -10226,6 +10226,7 @@ a.text-dark:hover, a.text-dark:focus {
 .title {
   color: #348680;
   font-size: 80px;
+  margin-bottom: 2rem;
 }
 
 .logo {

@@ -34,6 +34,8 @@ function RestoList() {
                         address={resto.address}
                         rating={arrAvg(resto.ratings.map(rating => rating.stars))}
                         stars={stars(resto)}
+                        lat={resto.lat}
+                        lng={resto.long}
                     />
                 )
             }

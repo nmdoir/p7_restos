@@ -66,9 +66,11 @@
     overflow-y: scroll;
 }
 
+h4 {
+    text-align: left;
+}
 .font-larger {
     font-size: larger;
-    text-align: center;
 }
 
 .bold {
