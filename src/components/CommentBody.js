@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Components.css";
 
-const CommentsModal = (props: any) => {
+const CommentBody = (props: any) => {
     const {stars, comment} = props;
     return (
         <li
@@ -14,4 +14,4 @@ const CommentsModal = (props: any) => {
 };
 
 
-export default CommentsModal;
+export default CommentBody;

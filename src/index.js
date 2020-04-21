@@ -4,13 +4,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import MapContainer from './components/MapContainer';
 import RestoList from "./components/RestoList";
-//import {CommentsList} from "./components/CommentsList";
+import {CommentsModal} from "./components/CommentsModal";
 
 import * as serviceWorker from './serviceWorker';
 
+
 ReactDOM.render(<MapContainer />, document.getElementById('map'));
 ReactDOM.render(<RestoList />, document.getElementById('list'));
-//ReactDOM.render(<CommentsList />, document.getElementById('commentsBody'));
+//ReactDOM.render(<CommentsBody />, document.getElementById('commentsBody'));
 
 
 serviceWorker.unregister();

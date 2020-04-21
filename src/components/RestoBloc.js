@@ -1,9 +1,10 @@
 import React from 'react';
 import "./Components.css";
-//import {CommentsList} from "./CommentsList";
+import {CommentsModal} from "./CommentsModal";
 
 const RestoBloc = (props: any) => {
     const {name, address, rating, stars, lat, lng} = props;
+
     return (
         <li
             className={"list-group-item commentsModal"}
@@ -22,7 +23,7 @@ const RestoBloc = (props: any) => {
                         </div>
                         <span className={"font-larger bold"}> {rating}</span>
                         <span className={"float-right"}>
-                        <button type="button" className="btn btn-light" data-toggle="modal" data-target="#commentsModal" title={name}>
+                        <button type="button" className="btn btn-light" onClick={CommentsModal} title={name}>
                             Commentaires
                         </button>
                         </span>
