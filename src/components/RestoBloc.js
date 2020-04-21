@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Components.css";
-import {CommentsList} from "./CommentsList";
+//import {CommentsList} from "./CommentsList";
 
 const RestoBloc = (props: any) => {
     const {name, address, rating, stars, lat, lng} = props;
