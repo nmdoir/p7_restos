@@ -1,9 +1,21 @@
 import React from 'react';
 import "./Components.css";
-import {CommentsModal} from "./CommentsModal";
+//import {CommentsModal} from "./CommentsModal";
+import Modal from "react-bootstrap/Modal";
+//import CommentBody from "./CommentBody";
 
 const RestoBloc = (props: any) => {
     const {name, address, rating, stars, lat, lng} = props;
+
+    const [isOpen, setIsOpen] = React.useState(false);
+
+    const showModal = () => {
+        setIsOpen(true);
+    };
+
+    const hideModal = () => {
+        setIsOpen(false);
+    };
 
     return (
         <li
@@ -23,7 +35,7 @@ const RestoBloc = (props: any) => {
                         </div>
                         <span className={"font-larger bold"}> {rating}</span>
                         <span className={"float-right"}>
-                        <button type="button" className="btn btn-light" onClick={CommentsModal} title={name}>
+                        <button type="button" className="btn btn-light" onClick={showModal} title={name}>
                             Commentaires
                         </button>
                         </span>
@@ -37,7 +49,30 @@ const RestoBloc = (props: any) => {
                     </div>
                 </div>
             </div>
+
+            <Modal show={isOpen} onHide={hideModal}>
+                <Modal.Header>Avis du restaurant</Modal.Header>
+                <Modal.Body>
+                    {
+                        <RestoBloc
+                            //commentModal
+                            name={name}
+                            address={address}
+                            rating={rating}
+                            //stars={stars(resto)}
+                            lat={lat}
+                            lng={lng}
+                        />
+                    }
+
+                </Modal.Body>
+                <Modal.Footer>
+                    <button onClick={hideModal}>Fermer</button>
+                </Modal.Footer>
+            </Modal>
         </li>
+
+
     );
 };
 

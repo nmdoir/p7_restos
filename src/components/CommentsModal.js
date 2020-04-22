@@ -6,8 +6,8 @@ import CommentBody from "./CommentBody";
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const CommentsModal = (resto) => {
 
+const CommentsModal = (resto) => {
     
     for (let i = 0; i < Restos.length; i++) {
         if (Restos[i].name === resto) {
@@ -23,8 +23,8 @@ const CommentsModal = (resto) => {
                     <RestoBloc
                         name={resto.name}
                         address={resto.address}
-                        rating={arrAvg(resto.ratings.map(rating => rating.stars))}
-                        stars={stars(resto)}
+                        //rating={arrAvg(resto.ratings.map(rating => rating.stars))}
+                        //stars={stars(resto)}
                         lat={resto.lat}
                         lng={resto.long}
                     />
