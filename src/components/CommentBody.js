@@ -7,8 +7,8 @@ const CommentBody = (props) => {
         <li
             className={"list-group-item"}
         >
-            <h4>Note : {stars}</h4>
-            <p className={"font-larger"}>{comment}</p>
+            <p>Note : <span className={"bold"}>{stars}/5</span></p>
+            <p>Commentaire : {comment}</p>
         </li>
     );
 };

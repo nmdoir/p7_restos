@@ -2,9 +2,7 @@ import React from 'react';
 import "./Components.css";
 import Modal from "react-bootstrap/Modal";
 import {CommentsModal} from "./CommentsModal";
-//import CommentBody from "./CommentBody";
-import {arrAvg, stars} from "./RestoList";
-import {Restos} from "./RestosData";
+import CommentBody from "./CommentBody";
 
 const RestoBloc = (props) => {
     const {name, address, rating, stars, lat, lng} = props;
@@ -61,6 +59,12 @@ const RestoBloc = (props) => {
                             address={address}
                             rating={rating}
                             stars={stars}
+                        />
+                    }
+                    {
+                        <CommentBody
+                            stars={rating.stars}
+                            comment={rating.comment}
                         />
                     }
 

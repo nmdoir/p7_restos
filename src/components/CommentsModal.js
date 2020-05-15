@@ -2,9 +2,7 @@ import {Restos} from "./RestosData";
 //import RestoBloc from "./RestoBloc";
 //import {arrAvg, stars} from "./RestoList";
 import React from "react";
-import CommentBody from "./CommentBody";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 
 const CommentsModal = (props) => {
 
@@ -24,8 +22,6 @@ const CommentsModal = (props) => {
                         />
                     </div>
                     <span className={"font-larger bold"}> {rating}</span>
-
-
                 </div>
             </div>
         </div>
