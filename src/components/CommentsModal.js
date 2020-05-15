@@ -1,48 +1,36 @@
 import {Restos} from "./RestosData";
-import RestoBloc from "./RestoBloc";
-import {arrAvg, stars} from "./RestoList";
+//import RestoBloc from "./RestoBloc";
+//import {arrAvg, stars} from "./RestoList";
 import React from "react";
 import CommentBody from "./CommentBody";
-import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
-const CommentsModal = (resto) => {
-    
-    for (let i = 0; i < Restos.length; i++) {
-        if (Restos[i].name === resto) {
-            resto = Restos[i];
-        }
-    }
+const CommentsModal = (props) => {
+
+    const {name, address, rating, stars} = props;
 
     return (
-        <Modal show={true}>
-            <Modal.Header>Avis du restaurant</Modal.Header>
-            <Modal.Body>
-                {
-                    <RestoBloc
-                        name={resto.name}
-                        address={resto.address}
-                        //rating={arrAvg(resto.ratings.map(rating => rating.stars))}
-                        //stars={stars(resto)}
-                        lat={resto.lat}
-                        lng={resto.long}
-                    />
-                }
 
-                {
-                    resto.ratings.map(comment =>
-                        <CommentBody
-                            rating={comment.stars}
-                            comment={comment.comment}
+        <div className="container-fluid">
+            <div className="row">
+                <div className="col-12">
+                    <h4>{name}</h4>
+                    <p className={"font-larger"}>{address}</p>
+                    <div className={"stars-outer far fa-star"}>
+                        <div
+                            className={"stars-inner fas fa-star"}
+                            style={{ width: stars }}
                         />
-                    )
-                }
-            </Modal.Body>
-            <Modal.Footer>
-                <button>Fermer</button>
-            </Modal.Footer>
-        </Modal>
+                    </div>
+                    <span className={"font-larger bold"}> {rating}</span>
+
+
+                </div>
+            </div>
+        </div>
+
+
     );
 };
 

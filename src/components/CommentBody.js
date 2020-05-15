@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Components.css";
 
-const CommentBody = (props: any) => {
+const CommentBody = (props) => {
     const {stars, comment} = props;
     return (
         <li
