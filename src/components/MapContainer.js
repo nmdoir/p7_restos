@@ -3,9 +3,8 @@ import GoogleMapReact from 'google-map-react';
 import Marker from "./Marker";
 import {Restos} from "./RestosData";
 import './Components.css';
- import CommentBody from "./CommentBody";
- import RestoBloc from "./RestoBloc";
- import {arrAvg, stars} from "./RestoList";
+import CommentBody from "./CommentBody";
+import {arrAvg, stars} from "./RestoList";
 
 class MapContainer extends React.Component {
     state = {

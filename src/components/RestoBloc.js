@@ -1,6 +1,5 @@
 import React from 'react';
 import "./Components.css";
-//import Modal from "react-bootstrap/Modal";
 import {CommentsModal} from "./CommentsModal";
 
 const RestoBloc = (props) => {
