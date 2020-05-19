@@ -26,7 +26,7 @@ const Restos = [
                 "comment":"Belle découverte que ce restaurant à 2 pas de République ! Tout est TOP: le cadre, l'accueil, la table."
             },
             {
-                "stars":4,
+                "stars":5,
                 "comment":"Un lieu très chaleureux, le service hyper accueillant à partir de la première seconde dans le restaurant, une belle histoire autour des produits et l’approche choisie. Un seul bémol - les plats n’étaient pas aux attentes car le bœuf un peu sec et la poulpe pas très tendre."
             }
         ]
@@ -38,7 +38,7 @@ const Restos = [
         "long":2.365153,
         "ratings":[
             {
-                "stars":4,
+                "stars":3,
                 "comment":"Très belle découverte, la nourriture est typique et super bonne, bien servi et rapidement, citronnade maison offerte, bon rapport qualité/prix et décoration super jolie. Néanmoins les places assises sont très limitées."
             },
             {

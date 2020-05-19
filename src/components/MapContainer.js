@@ -2,7 +2,9 @@
 import GoogleMapReact from 'google-map-react';
 import Marker from "./Marker";
 import {Restos} from "./RestosData";
-import './Marker.css';
+import './Components.css';
+import CommentBody from "./CommentBody";
+import {arrAvg, stars} from "./RestoList";
 
 class MapContainer extends React.Component {
     state = {
@@ -49,10 +51,10 @@ class MapContainer extends React.Component {
 
     render() {
         return (
-            <div style={{ height: '80vh', width: '60%' }}>
+            <div style={{ height: '80vh', width: '100%' }}>
                 <GoogleMapReact
                     bootstrapURLKeys={{
-                        key: "AIzaSyCE6qR2VZH07JiSuIDmV65qImfCcgDXWrE",
+                        key: "AIzaSyDqUz5uWh3Bc32cdHvUQ-JZo1r9TJilfIw",
                         libraries: ['places']
                     }}
                     onChange={this._onChange}
@@ -67,12 +69,21 @@ class MapContainer extends React.Component {
                         lng={this.state.userPos.lng}
                     />
                     {
-                        Restos.map(marker =>
+                        Restos.map(resto =>
                             <Marker
-                                lat={marker.lat}
-                                lng={marker.long}
-                                name={marker.name}
                                 color="#348680"
+                                name={resto.name}
+                                address={resto.address}
+                                rating={arrAvg(resto.ratings.map(rating => rating.stars))}
+                                stars={stars(resto)}
+                                lat={resto.lat}
+                                lng={resto.long}
+                                comments={resto.ratings.map(rating =>
+                                    <CommentBody
+                                        stars={`${(rating.stars * 100) / 5}%`}
+                                        comment={rating.comment}
+                                    />
+                                )}
                             />
                         )
                     }
