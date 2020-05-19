@@ -8,7 +8,7 @@ const CommentBody = (props) => {
             className={"list-group-item"}
         >
             <p>Note : <span className={"bold"}>{stars}/5</span></p>
-            <p>Commentaire : {comment}</p>
+            <p>{comment}</p>
         </li>
     );
 };

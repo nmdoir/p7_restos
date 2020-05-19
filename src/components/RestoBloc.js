@@ -1,11 +1,12 @@
 import React from 'react';
 import "./Components.css";
+import {Restos} from "./RestosData";
 import Modal from "react-bootstrap/Modal";
 import {CommentsModal} from "./CommentsModal";
 import CommentBody from "./CommentBody";
 
 const RestoBloc = (props) => {
-    const {name, address, rating, stars, lat, lng} = props;
+    const {name, address, rating, stars, lat, lng, comments} = props;
 
     const [isOpen, setIsOpen] = React.useState(false);
 
@@ -59,15 +60,9 @@ const RestoBloc = (props) => {
                             address={address}
                             rating={rating}
                             stars={stars}
+                            comments={comments}
                         />
                     }
-                    {
-                        <CommentBody
-                            stars={rating.stars}
-                            comment={rating.comment}
-                        />
-                    }
-
                 </Modal.Body>
                 <Modal.Footer>
                     <button onClick={hideModal}>Fermer</button>
