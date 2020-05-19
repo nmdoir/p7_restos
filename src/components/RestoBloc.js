@@ -1,12 +1,10 @@
 import React from 'react';
 import "./Components.css";
-import {Restos} from "./RestosData";
-import Modal from "react-bootstrap/Modal";
+//import Modal from "react-bootstrap/Modal";
 import {CommentsModal} from "./CommentsModal";
-import CommentBody from "./CommentBody";
 
 const RestoBloc = (props) => {
-    const {name, address, rating, stars, lat, lng, comments} = props;
+    const {name, address, rating, stars, lat, lng, comments, marker} = props;
 
     const [isOpen, setIsOpen] = React.useState(false);
 
@@ -50,24 +48,17 @@ const RestoBloc = (props) => {
                     </div>
                 </div>
             </div>
-
-            <Modal show={isOpen} onHide={hideModal}>
-                <Modal.Header>Avis du restaurant</Modal.Header>
-                <Modal.Body>
-                    {
-                        <CommentsModal
-                            name={name}
-                            address={address}
-                            rating={rating}
-                            stars={stars}
-                            comments={comments}
-                        />
-                    }
-                </Modal.Body>
-                <Modal.Footer>
-                    <button onClick={hideModal}>Fermer</button>
-                </Modal.Footer>
-            </Modal>
+            {
+                <CommentsModal
+                    name={name}
+                    address={address}
+                    rating={rating}
+                    stars={stars}
+                    comments={comments}
+                    openModal={isOpen}
+                    hideModal={hideModal}
+                />
+            }
         </li>
 
 

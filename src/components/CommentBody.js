@@ -7,8 +7,13 @@ const CommentBody = (props) => {
         <li
             className={"list-group-item"}
         >
-            <p>Note : <span className={"bold"}>{stars}/5</span></p>
-            <p>{comment}</p>
+            <div className={"stars-outer far fa-star margin-bottom"}>
+                <div
+                    className={"stars-inner fas fa-star"}
+                    style={{ width: stars }}
+                />
+            </div>
+            <div>{comment}</div>
         </li>
     );
 };

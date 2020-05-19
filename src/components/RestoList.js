@@ -3,6 +3,7 @@ import {Restos} from "./RestosData";
 import RestoBloc from "./RestoBloc";
 import './Components.css';
 import CommentBody from "./CommentBody";
+import Marker from "./Marker";
 
 export const arrAvg = arr => Math.round((arr.reduce((a,b) => a + b, 0) / arr.length) * 10) / 10;
 
@@ -31,10 +32,17 @@ function RestoList() {
                         lng={resto.long}
                         comments={resto.ratings.map(rating =>
                             <CommentBody
-                                stars={rating.stars}
+                                stars={`${(rating.stars * 100) / 5}%`}
                                 comment={rating.comment}
                             />
                         )}
+                        marker={
+                            <Marker
+                                lat={resto.lat}
+                                lng={resto.long}
+                                color="#348680"
+                            />
+                        }
                     />
                 )
             }
