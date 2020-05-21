@@ -1,23 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import MapContainer from "./components/MapContainer";
+import RestoList from "./components/RestoList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="container">
+          <div className="row">
+              <div className="col-7">
+                  <MapContainer/>
+              </div>
+              <div className="col-5">
+                  <RestoList/>
+              </div>
+          </div>
+      </div>
   );
 }
 
