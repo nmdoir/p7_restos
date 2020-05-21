@@ -3,7 +3,7 @@ import "./Components.css";
 import {CommentsModal} from "./CommentsModal";
 
 const RestoBloc = (props) => {
-    const {name, address, rating, stars, lat, lng, comments, marker} = props;
+    const {name, address, rating, stars, lat, lng, comments} = props;
 
     const [isOpen, setIsOpen] = React.useState(false);
 
