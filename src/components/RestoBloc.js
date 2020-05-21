@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Components.css";
+import "./RestoBloc.css";
 import {CommentsModal} from "./CommentsModal";
 
 const RestoBloc = (props) => {
@@ -17,7 +17,7 @@ const RestoBloc = (props) => {
 
     return (
         <li
-            className={"list-group-item commentsModal"}
+            className={"list-group-item"}
             title={name}
         >
             <div className="container-fluid">

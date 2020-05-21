@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Components.css";
+import "./CommentBody.css";
 
 const CommentBody = (props) => {
     const {stars, comment} = props;

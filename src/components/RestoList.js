@@ -1,7 +1,7 @@
 import React from 'react';
 import {Restos} from "./RestosData";
 import RestoBloc from "./RestoBloc";
-import './Components.css';
+import './RestoList.css';
 import CommentBody from "./CommentBody";
 import Marker from "./Marker";
 

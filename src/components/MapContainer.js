@@ -2,7 +2,7 @@
 import GoogleMapReact from 'google-map-react';
 import Marker from "./Marker";
 import {Restos} from "./RestosData";
-import './Components.css';
+import './MapContainer.css';
 import CommentBody from "./CommentBody";
 import {arrAvg, stars} from "./RestoList";
 
