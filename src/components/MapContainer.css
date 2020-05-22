@@ -60,3 +60,7 @@
         transform: translateY(0) rotate(-45deg);
     }
 }
+
+.map-margin {
+    margin-bottom: 2rem;
+}

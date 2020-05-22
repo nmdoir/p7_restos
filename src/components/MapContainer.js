@@ -51,7 +51,7 @@ class MapContainer extends React.Component {
 
     render() {
         return (
-            <div style={{ height: '80vh', width: '100%' }}>
+            <div style={{ height: '80vh', width: '100%' }} className={"map-margin"}>
                 <GoogleMapReact
                     bootstrapURLKeys={{
                         key: "AIzaSyDqUz5uWh3Bc32cdHvUQ-JZo1r9TJilfIw",
