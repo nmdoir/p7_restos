@@ -22,24 +22,22 @@ const RestoBloc = (props) => {
         >
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-md-9 no-padding">
+                    <div className="col-md-8 no-padding-left">
                         <h4>{name}</h4>
-                        <p className={"font-larger"}>{address}</p>
-                        <div className={"stars-outer far fa-star"}>
+                        <p className={"margin-bottom"}>{address}</p>
+                        <div className={"stars-outer far fa-star padding"}>
                             <div
                                 className={"stars-inner fas fa-star"}
                                 style={{ width: stars }}
                             />
                         </div>
-                        <span className={"font-larger bold"}> {rating}</span>
-                        <span className={"float-right"}>
-                        <button type="button" className="btn btn-light" onClick={showModal} title={name}>
-                            Commentaires
+                        <span className={"font-larger bold inline-block"}> {rating}</span>
+                        <button type="button" className="btn btn-light margin-bottom" onClick={showModal} title={name}>
+                            Voir les avis
                         </button>
-                        </span>
                     </div>
 
-                    <div className="col-md-3 no-padding">
+                    <div className="col-md-4 no-padding">
                         <img
                             className={"streetview-img"}
                             src={"https://maps.googleapis.com/maps/api/streetview?size=110x110&location=" + lat + "," + lng + "&key=AIzaSyDqUz5uWh3Bc32cdHvUQ-JZo1r9TJilfIw" }

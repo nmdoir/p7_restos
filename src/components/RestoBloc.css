@@ -34,10 +34,30 @@
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
-    width: 100%;
-    max-height: 100%;
+    width: auto;
+    max-height: 12rem;
+}
+
+.no-padding-left {
+    padding-left: 0;
 }
 
 .no-padding {
     padding-left: 0;
+    padding-right: 0;
+}
+
+.padding {
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.inline-block {
+    display: inline-block;
+    width: 30px;
+    padding-right: 40px;
+}
+
+.margin-bottom {
+    margin-bottom: 0.5rem;
 }
