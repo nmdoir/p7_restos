@@ -22,7 +22,7 @@ const RestoBloc = (props) => {
         >
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-9">
+                    <div className="col-md-9 no-padding">
                         <h4>{name}</h4>
                         <p className={"font-larger"}>{address}</p>
                         <div className={"stars-outer far fa-star"}>
@@ -39,8 +39,9 @@ const RestoBloc = (props) => {
                         </span>
                     </div>
 
-                    <div className="col-3">
+                    <div className="col-md-3 no-padding">
                         <img
+                            className={"streetview-img"}
                             src={"https://maps.googleapis.com/maps/api/streetview?size=110x110&location=" + lat + "," + lng + "&key=AIzaSyDqUz5uWh3Bc32cdHvUQ-JZo1r9TJilfIw" }
                             alt={"Streetview"}
                         />

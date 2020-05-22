@@ -5,11 +5,11 @@ import RestoList from "./components/RestoList";
 function App() {
   return (
       <div className="container-fluid">
-          <div className="row">
-              <div className="col-7">
+          <div className="row no-gutters">
+              <div className="col-6 col-md-7">
                   <MapContainer/>
               </div>
-              <div className="col-5">
+              <div className="col-6 col-md-5">
                   <RestoList/>
               </div>
           </div>
