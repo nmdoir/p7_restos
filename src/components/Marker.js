@@ -1,5 +1,4 @@
 import React from 'react';
-import './Marker.css';
 import {CommentsModal} from "./CommentsModal";
 
 const Marker = (props: any) => {
