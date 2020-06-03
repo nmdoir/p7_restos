@@ -2,7 +2,7 @@
 import GoogleMapReact from 'google-map-react';
 import Marker from "./Marker";
 import {Restos} from "./RestosData";
-import './Components.css';
+import './MapContainer.css';
 import CommentBody from "./CommentBody";
 import {arrAvg, stars} from "./RestoList";
 
@@ -51,7 +51,7 @@ class MapContainer extends React.Component {
 
     render() {
         return (
-            <div style={{ height: '80vh', width: '100%' }}>
+            <div style={{ height: '80vh', width: '100%' }} className={"map-margin"}>
                 <GoogleMapReact
                     bootstrapURLKeys={{
                         key: "AIzaSyDqUz5uWh3Bc32cdHvUQ-JZo1r9TJilfIw",

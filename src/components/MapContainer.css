@@ -1,4 +1,4 @@
-.marker .place {
+.place {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -61,47 +61,6 @@
     }
 }
 
-.listGroup {
-    max-height: 80vh;
-    overflow-y: scroll;
+.map-margin {
+    margin-bottom: 2rem;
 }
-
-h4 {
-    text-align: left;
-}
-.font-larger {
-    font-size: larger;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.margin-bottom {
-    margin-bottom: 1rem;
-}
-
-.stars-outer {
-    display: inline-block;
-    position: relative;
-    font-family: FontAwesome;
-}
-
-.stars-outer::before {
-    content: "\f006 \f006 \f006 \f006 \f006";
-}
-
-.stars-inner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-}
-
-.stars-inner::before {
-    content: "\f005 \f005 \f005 \f005 \f005";
-    color: #f8b125;
-}
-
