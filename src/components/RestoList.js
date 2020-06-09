@@ -21,9 +21,35 @@ function RestoList() {
 
     <div style={{ width: '100%' }}>
         <ul className={"listGroup"}>
+        <div className="row align-items-center margin-bottom">
+            <div className="col-auto">
+                <label>Note minimum</label>
+                <select className="custom-select mr-sm-2" id="selectMin">
+                    <option selected>Choisir...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div className="col-auto">
+                <label>Note maximum</label>
+                <select className="custom-select mr-sm-2" id="selectMax">
+                    <option selected>Choisir...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </div>
+
             {
                 Restos.map(resto =>
                     <RestoBloc
+                        visibility={""}
                         name={resto.name}
                         address={resto.address}
                         rating={arrAvg(resto.ratings.map(rating => rating.stars))}
