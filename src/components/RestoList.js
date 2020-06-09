@@ -48,8 +48,7 @@ render() {
     return (
 
     <div style={{ width: '100%' }}>
-        <ul className={"listGroup"}>
-        <div className="row align-items-center margin-bottom">
+        <div className="row align-items-center align">
             <div className="col-auto">
                 <label>Note minimum</label>
                 <select
@@ -82,6 +81,7 @@ render() {
             </div>
         </div>
 
+        <ul className={"listGroup"}>
             {
                 Restos.map(resto =>
                     <RestoBloc

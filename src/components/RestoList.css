@@ -1,4 +1,10 @@
 .listGroup {
-    max-height: 80vh;
+    max-height: 70vh;
     overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.align {
+    margin-left: 24px;
+    margin-bottom: 0.5rem;
 }
